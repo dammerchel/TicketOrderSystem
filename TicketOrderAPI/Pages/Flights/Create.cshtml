@@ -1,0 +1,55 @@
+@page
+@model TicketOrderAPI.Pages.Flights.CreateModel
+@using TicketOrderAPI.Model
+
+@{
+    ViewData["Title"] = "Tworzenie nowego lotu";
+}
+
+<h2>Tworzenie lotu</h2>
+
+<h4>Dane lotu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Flight.FlightName"  class="control-label"></label>
+                <select asp-for="Flight.FlightName" asp-items="Html.GetEnumSelectList<FlightType>()" class="form-control"></select>
+                <span asp-validation-for="Flight.FlightName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flight.FlightDescription" class="control-label"></label>
+                <input asp-for="Flight.FlightDescription" class="form-control" />
+                <span asp-validation-for="Flight.FlightDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flight.FlightDate" class="control-label"></label>
+                <input asp-for="Flight.FlightDate" class="form-control" />
+                <span asp-validation-for="Flight.FlightDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flight.DestinationAirport" class="control-label"></label>
+                <input asp-for="Flight.DestinationAirport" class="form-control" />
+                <span asp-validation-for="Flight.DestinationAirport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flight.DepartureAirport" class="control-label"></label>
+                <input asp-for="Flight.DepartureAirport" class="form-control" />
+                <span asp-validation-for="Flight.DepartureAirport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Stw&#243;rz" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Employees"><input type="button" value="Wr&#243;&#263; do listy"></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,61 @@
+@page
+@model TicketOrderAPI.Pages.Flights.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista lot&#243;w</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flight[0].FlightName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flight[0].FlightDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flight[0].FlightDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flight[0].DestinationAirport)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flight[0].DepartureAirport)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Flight) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationAirport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureAirport)
+            </td>
+            <td>                
+                <a asp-page="./FlightTickets" asp-route-id="@item.FlightID">Bilety</a>   
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+
+

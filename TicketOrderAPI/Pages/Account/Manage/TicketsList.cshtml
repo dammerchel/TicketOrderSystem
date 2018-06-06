@@ -1,0 +1,63 @@
+﻿@page
+@model TicketsListModel
+@{
+    ViewData["Title"] = "Tickets List";
+}
+
+<h2>Lista kupionych bilet&#243;w</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].FlightID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].ClientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketSeat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Ticket)
+        {
+            @if (User.Identity.Name==item.ClientID)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketSeat)
+            </td>
+
+
+        </tr>
+            }
+        }
+    </tbody>
+</table>

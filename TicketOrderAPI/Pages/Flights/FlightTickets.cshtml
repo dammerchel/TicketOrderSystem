@@ -1,0 +1,66 @@
+﻿@page
+@model TicketOrderAPI.Pages.Flights.FlightTicketsModel
+
+@{
+    ViewData["Title"] = "Dostępne bilety";
+}
+
+<h2>Lista bilet&#243;w</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].FlightID)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket[0].TicketSeat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Ticket)
+        {
+            @if ((Model.Flight.FlightID==item.FlightID)&&(item.ClientID==null))
+            {            
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketSeat)
+            </td>
+            <td>
+                <a asp-page="./TicketOrder" asp-route-id="@item.TicketID">Kup bilet</a> 
+            </td>
+        </tr>
+                }
+            }
+    </tbody>
+</table>
+
+<div>
+    <a asp-page="./Index"><input type="button" value="Wr&#243;&#263; do listy lot&#243;w"></a>
+</div>

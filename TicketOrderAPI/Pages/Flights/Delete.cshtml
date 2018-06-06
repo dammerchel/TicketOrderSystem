@@ -1,0 +1,55 @@
+@page
+@model TicketOrderAPI.Pages.Flights.DeleteModel
+
+@{
+    ViewData["Title"] = "Usuñ lot";
+}
+
+<h2>Usuwanie lotu</h2>
+
+<h3>Czy napewno chcesz usun&#261;&#263; ten lot?</h3>
+<div>
+    <h4>Dane lotu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.DestinationAirport)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.DestinationAirport)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.DepartureAirport)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.DepartureAirport)
+        </dd>
+    </dl>
+    </div>
+    <div>
+        <form method="post">
+            <input type="hidden" asp-for="Flight.FlightID" />
+            <input type="submit" value="Potwierd&#378;" class="btn btn-default" />             
+        </form>
+        
+        <a asp-page="./Employees"><input type="button" value="Wr&#243;&#263; do listy"></a>
+    </div>
+        

@@ -1,0 +1,83 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div>
+    <h1>Witaj w systemie zamawiania bilet&#243;w lotniczych!  </h1>
+
+
+
+</div>
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        
+        margin: auto;
+    }
+</style>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>   
+       
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <a asp-page="/About">
+                <img src="~/images/AboutUsPage.png" alt="AboutUsPage" class="img-responsive" />               
+            </a>
+                <div class="carousel-caption">
+                    <h3>Dowiedz si&#281; o nas wi&#281;cej!</h3>
+                    <p>Strona po&#347;wi&#281;cona naszej firmie.</p>
+                </div>
+        </div>
+
+        <div class="item">
+            <a asp-page="/Flights/Index">
+                <img src="~/images/ClientsPagePicture.png" alt="ClientPage" class="img-responsive" />               
+            </a>
+                    <div class="carousel-caption">
+                        <h3>Zam&#243;w bilet ju&#380; dzi&#347;!</h3>
+                        <p>System zamawiania bilet&#243;w.</p>
+                    </div>
+</div>
+
+        <div class="item">
+            <a asp-page="/Flights/Employees">
+                <img src="~/images/EmployeesPage.png" alt="EmployeesPage" class="img-responsive" />                
+            </a>
+                <div class="carousel-caption">
+                    <h3>Wykonaj swoją pracę!!</h3>
+                    <p>System obs&#322;ugi lot&#243;w.</p>
+                </div>
+        </div>
+
+        <div class="item">
+            <a asp-page="/Contact">
+                <img src="~/images/ContactPage.png" alt="ContactPage" class="img-responsive" />                
+            </a>
+                <div class="carousel-caption">
+                    <h3>Skontaktuj si&#281; z nami!</h3>
+                    <p>Przydatne numery i adresy e-mail.</p>
+                </div>
+        </div>
+
+        
+        
+    </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+

@@ -1,0 +1,52 @@
+﻿@page
+@model TicketOrderAPI.Pages.Flights.TicketOrderModel
+@{
+    ViewData["Title"] = "Tickets";
+}
+<h2>Zakup bilet</h2>
+
+<div>
+    <h4>Dane biletu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.TicketName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.TicketName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.TicketPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.TicketPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.TicketDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.TicketDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.FlightID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.FlightID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.TicketSeat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.TicketSeat)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Ticket.TicketID" />
+        <input type="submit" value="Potwierdzenie zakupu" class="btn btn-default" /> 
+        
+    </form>
+
+    <a asp-page="./Index"><input type="button" value="Wr&#243;&#263; do listy"></a>
+</div>

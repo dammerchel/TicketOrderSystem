@@ -1,0 +1,48 @@
+@page
+@model TicketOrderAPI.Pages.Flights.DetailsModel
+
+@{
+    ViewData["Title"] = "Szczegó³y";
+}
+
+<h2>Szczeg&#243;&#322;y</h2>
+
+<div>
+    <h4>Dane lotu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.DestinationAirport)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.DestinationAirport)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.DepartureAirport)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.DepartureAirport)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Employees"><input type="button" value="Wr&#243;&#263; do listy"></a>
+</div>

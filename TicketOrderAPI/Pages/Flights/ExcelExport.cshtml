@@ -1,0 +1,20 @@
+﻿@page
+@model ExcelExportModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Generowanie pliku .xlsx zawieraj&#261;cego wykaz bilet&#243;w lotniczych.</h2>
+<div>
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-8" style="padding-top:10px;">
+                <button asp-page-handler="Export">Eksportuj</button>
+            </div>
+        </div>
+        <br />
+
+    </form>
+
+    <a asp-page="./Employees"><input type="button" value="Wr&#243;&#263; do listy"></a>
+</div>

@@ -1,0 +1,17 @@
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderXUnitTest.deps.json
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderXUnitTest.runtimeconfig.json
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderXUnitTest.runtimeconfig.dev.json
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderXUnitTest.dll
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderXUnitTest.pdb
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderAPI.dll
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\bin\Debug\netcoreapp2.0\TicketOrderAPI.pdb
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.AssemblyInfo.cs
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.csproj.CopyComplete
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.dll
+C:\Users\PC\source\repos\TicketOrderAPI\TicketOrderXUnitTest\obj\Debug\netcoreapp2.0\TicketOrderXUnitTest.pdb

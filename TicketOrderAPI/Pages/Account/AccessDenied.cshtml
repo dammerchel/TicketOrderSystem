@@ -1,0 +1,15 @@
+@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Upssss!";
+}
+
+<header>
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <p class="text-danger">Ta strona jest przeznaczona dla pracownik&#243;w. </p>
+</header>
+
+<div>
+    
+    <a asp-page="/Index">Powr&#243;t do strony domowej</a>
+</div>
