@@ -13,7 +13,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TicketOrderAPI.Model
 {
-    public class Flight                                 //Instacje Flight to kolejne loty realizowane przez przewoźnika. Każdemu lotowi odpowiada zestaw biletów, które mogą kupić klienci.
+    /// <summary>
+    /// Instacje klasy Flight to kolejne loty realizowane przez przewoźnika. Każdemu lotowi odpowiada zestaw biletów, które mogą kupić klienci.
+    /// </summary>
+    public class Flight                                 
     {
         [Display(Name = "ID lotu")]
         public int FlightID { get; set; }               //Identyfikator lotu
@@ -30,55 +33,62 @@ namespace TicketOrderAPI.Model
         public string DepartureAirport { get; set; }    //Lotnisko wylotu
         
 
-        public TicketContext CreateFlight()                      //Metoda tworząca zestaw biletów odpowiadających lotowi. Ilość i rodzaj tworzonych biletów zależy od typu samolotu. Bilety zapisywane są w odpowiedniej dla nich bazie danych Ticket.
+        /// <summary>
+        /// Metoda tworząca zestaw biletów odpowiadających lotowi. Ilość i rodzaj tworzonych biletów zależy od typu samolotu. Bilety zapisywane są w odpowiedniej dla nich bazie danych Ticket.
+        /// </summary>
+        /// <returns></returns>
+        public TicketContext CreateFlight()                      
         {
-            int EconomicTickets=0;
-            int BusinessTickets=0;
-            int FirstClassTickets=0;
+            int economicTickets=0;
+            int businessTickets=0;
+            int firstClassTickets=0;
             var optionsBuilder=new DbContextOptionsBuilder<TicketContext>();
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Ticket-1;Trusted_Connection=True;MultipleActiveResultSets=true");            
             TicketContext services = new TicketContext(optionsBuilder.Options);
-            
-            if(FlightName.Equals(FlightType.Boeing787))
+
+            switch (FlightName)     //W zależności od rodzaju samolotu zostanie utworzony zestaw biletów zawierający określone ilości biletów danego typu. Ilości biletów ograniczono dla zachowania przejrzystości strony FlightTickets.
             {
-                EconomicTickets = 5;
-                BusinessTickets = 2;
-                FirstClassTickets = 1;
-            }
-            else if(FlightName.Equals(FlightType.Boeing737))
-            {
-                EconomicTickets = 4;
-                BusinessTickets = 5;
-                FirstClassTickets = 5;
-            }
-            else if(FlightName.Equals(FlightType.Embraer))
-            {
-                EconomicTickets = 3;
-                BusinessTickets = 2;
-                FirstClassTickets = 1;
+
+                case FlightType.Boeing787:
+                    economicTickets = 5;
+                    businessTickets = 2;
+                    firstClassTickets = 1;
+                    break;
+
+                case FlightType.Boeing737:
+                    economicTickets = 4;
+                    businessTickets = 5;
+                    firstClassTickets = 5;
+                    break;
+
+                case FlightType.Embraer:
+                    economicTickets = 3;
+                    businessTickets = 2;
+                    firstClassTickets = 1;
+                    break;                   
             }
 
-            for (int i = 1; i <= EconomicTickets; i++)
-            {
-                
-                
+            for (int i = 1; i <= economicTickets; i++)
+            {      
                 services.Add(Ticket.CreateTicket( this, TicketType.Economic, i));
             }
-            for (int i = 1; i <= BusinessTickets; i++)
+            for (int i = 1; i <= businessTickets; i++)
             {
                 services.Add(Ticket.CreateTicket( this, TicketType.Business, i));
             }
-            for (int i = 1; i <= FirstClassTickets; i++)
+            for (int i = 1; i <= firstClassTickets; i++)
             {
                 services.Add(Ticket.CreateTicket(this, TicketType.FirstClass, i));
             }
-
             services.SaveChanges();
-            return services;
-            
+            return services;            
         }
-        
-        public int DeleteFlight()                  //Metoda usuwajaca zestaw biletów odpowiadających określonemu lotowi. Wywoływana przy kasowaniu lotu. Usuwa obiekty z bazy danych Ticket.
+
+        /// <summary>
+        /// Metoda usuwajaca zestaw biletów odpowiadających określonemu lotowi. Wywoływana przy kasowaniu lotu. Usuwa obiekty z bazy danych Ticket.
+        /// </summary>
+        /// <returns></returns>
+        public int DeleteFlight()                  
         {
             var optionsBuilder = new DbContextOptionsBuilder<TicketContext>();
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Ticket-1;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -97,12 +107,12 @@ namespace TicketOrderAPI.Model
             services.SaveChanges();
             return testTicket;
         }
-
-
-
     }
 
-    public enum FlightType          //Zbiór typów samolotów, jakimi może odbyć się lot. 
+    /// <summary>
+    /// Zbiór typów samolotów, jakimi może odbyć się lot. 
+    /// </summary>
+    public enum FlightType          
     {
         Boeing787=1,
         Boeing737=2,

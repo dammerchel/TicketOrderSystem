@@ -7,11 +7,14 @@ namespace TicketOrderXUnitTest
 {
     public class UnitTest1
     {
-        [Fact]
-        public void Test1()             //Test sprawdzaj¹cy poprawne usuniêcie obiektu Ticket z bazy danych przez metodê DeleteFlight()
+        /// <summary>
+        /// Test sprawdzaj¹cy poprawne usuniêcie obiektu Ticket z bazy danych przez metodê DeleteFlight()
+        /// </summary>
+        [Fact]        
+        public void DeleteFlight_Deleted_True()             
         {
             Ticket testTicket = new Ticket();
-            int ticketID = 0;
+            int ticketID = 0;            
             Flight flight = new Flight
             {
                 FlightID=25,    
@@ -29,8 +32,11 @@ namespace TicketOrderXUnitTest
             services.Find<Ticket>(ticketID);
             Assert.Null(testTicket.TicketDescription);
         }
+        /// <summary>
+        /// Test sprawdzaj¹cy poprawne utworzenie instancji do komunikacji z baz¹ danych przez metodê CreateFlight
+        /// </summary>
         [Fact]
-        public void Test2()             //Test sprawdzaj¹cy poprawne utworzenie instancji do komunikacji z baz¹ danych przez metodê CreateFlight
+        public void CreateFlight_TicketContextCorrect_True()             
         {
             Flight flight = new Flight
             {
@@ -47,9 +53,11 @@ namespace TicketOrderXUnitTest
             Assert.IsType<TicketContext>(services);
 
         }
-
+        /// <summary>
+        /// Test sprawdzaj¹cy poprawne utworzenie instancji do komunikacji z baz¹ danych przez metodê CreateFlight
+        /// </summary>
         [Fact]
-        public void Test3()             //Test sprawdzaj¹cy poprawne utworzenie instancji do komunikacji z baz¹ danych przez metodê CreateFlight
+        public void CreateTicket_CreatedCorrectly_True()             
         {
             Flight flight = new Flight
             {

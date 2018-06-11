@@ -13643,11 +13643,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\TicketOrderAPI\\TicketOrderAPI\\TicketOrderAPI.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\TicketOrderAPI\\TicketOrderAPI\\TicketOrderAPI.csproj",
       "projectName": "TicketOrderAPI",
-      "projectPath": "C:\\Users\\PC\\source\\repos\\TicketOrderAPI\\TicketOrderAPI\\TicketOrderAPI.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\TicketOrderAPI\\TicketOrderAPI\\TicketOrderAPI.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\source\\repos\\TicketOrderAPI\\TicketOrderAPI\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\TicketOrderAPI\\TicketOrderAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

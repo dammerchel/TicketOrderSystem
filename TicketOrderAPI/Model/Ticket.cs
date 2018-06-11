@@ -9,6 +9,9 @@ using TicketOrderAPI.Data;
 
 namespace TicketOrderAPI.Model
 {
+    /// <summary>
+    /// Instancje tej klasy to bilety na konkretne loty. Każdy bliet ma określoną klasę, cenę, numer siedzenia oraz ID klienta i ID lotu.
+    /// </summary>
     public class Ticket
     {
         [Display(Name = "ID biletu")]
@@ -26,6 +29,13 @@ namespace TicketOrderAPI.Model
         [Display(Name = "Numer siedzenia")]
         public int TicketSeat { get; set; }             //Numer miejsca w samolocie
 
+        /// <summary>
+        /// Metoda tworząca nową instancję klasy Ticket, pobierajaca dane dotyczące lotu, klasę tworzonego biletu oraz numer pozycji w samolocie.
+        /// </summary>
+        /// <param name="flight"></param>
+        /// <param name="ticketName"></param>
+        /// <param name="ticketSeat"></param>
+        /// <returns></returns>
         public static Ticket CreateTicket(Flight flight, TicketType ticketName, int ticketSeat)
         {
             Ticket ticket = null; ;
@@ -79,8 +89,10 @@ namespace TicketOrderAPI.Model
     }
 
 
-
-    public enum TicketType      //Typy oferowanych biletów. Typ biletu decyduje o jego cenie i oferowanych usługach.
+    /// <summary>
+    /// Typy oferowanych biletów. Typ biletu decyduje o jego cenie i oferowanych usługach.
+    /// </summary>
+    public enum TicketType      
     {
         Economic = 1,
         Business = 2,
